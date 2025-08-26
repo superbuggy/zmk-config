@@ -1,0 +1,28 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
+
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+    layer0 {
+      bindings = <
+        &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &mt LEFT_GUI A &mt LEFT_ALT S &mt LEFT_CONTROL D &mt LEFT_SHIFT F [[HYPR_T(KC_G)]] [[HYPR_T(KC_H)]] [[RSFT_T(KC_J)]] [[RCTL_T(KC_K)]] [[RALT_T(KC_L)]] [[RGUI_T(KC_SCLN)]] &lt 2 Z &kp X &kp C &kp V &kp B &lt 1 N &kp M &kp COMMA &kp DOT &kp SLASH &lt 2 F20 &kp SPACE &lt 1 TAB &kp ENTER &kp BACKSPACE
+      >;
+    };
+
+    layer1 {
+      bindings = <
+        &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &mt LEFT_GUI GRAVE &mt LEFT_ALT F20 &mt LEFT_CONTROL F20 &mt LEFT_SHIFT F20 [[HYPR_T(KC_NO)]] [[MS_WHLU]] &kp GRAVE &kp MINUS &kp EQUAL &kp SINGLE_QUOTE &kp K_UNDO &kp K_CUT &kp K_COPY &kp K_PASTE &kp FIND [[MS_WHLD]] &kp BACKSLASH &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp KP_SLASH &kp PRINTSCREEN [[MS_WHLL]] [[MS_WHLR]] [[MS_BTN1]] [[MS_BTN2]]
+      >;
+    };
+
+    layer2 {
+      bindings = <
+        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp LEFT_GUI &kp LEFT_ALT &kp LEFT_CONTROL &kp LEFT_SHIFT [[HYPR_T(KC_NO)]] &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp F11 &kp K_UNDO &kp K_CUT &kp K_COPY &kp K_PASTE &kp FIND &kp HOME &kp PAGE_DOWN &kp PAGE_UP &kp END &kp F12 &kp C_VOLUME_DOWN &kp C_VOLUME_UP &kp C_MUTE [[MS_BTN1]] [[MS_BTN2]]
+      >;
+    };
+  };
+};
+

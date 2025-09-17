@@ -1,0 +1,7 @@
+config BOARD_FATA_MORGANA_LEFT
+    bool "fata-morgana left"
+    depends on SOC_NRF52840_QIAA
+
+config BOARD_FATA_MORGANA_RIGHT
+    bool "fata-morgana right"
+    depends on SOC_NRF52840_QIAA

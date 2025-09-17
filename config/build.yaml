@@ -1,0 +1,8 @@
+# This file generates the GitHub Actions matrix.
+# For simple board + shield combinations, add them to the top level board and shield arrays.
+# For more control, add individual board + shield combinations to the `include` property.
+# You can also use `exclude` to remove combinations.
+
+include:
+  - board: fata_morgana_left
+  # - board: fata_morgana_right

@@ -11,27 +11,26 @@ Skree tail
     Format:   
         Wire Color | Skree Node | MCU Node | Pin Code  
     Rows
-        Red      R6 -  -  not connected
-        Blck     R5 -  -  not connected
-        Yellow   R4 -> 6  (P0.07 - HS)
-        Green    R3 -> 9  (P0.26 - HS)
-        Blue     R2 -> 10 (P0.27 - HS)
-        White    R1 -> 11 (P0.06 - HS)
-        Orange   TR -> 12 (P0.08 - HS)
-
+        Orange   R6  -  not connected
+        White    R5  -  not connected
+        Blue     R4  -  not connected
+        Green    R3 -> A3 (P0.28 - LS)
+        Yellow   R2 -> A2 (P0.30 - LS)
+        Black    R1 -> A1 (P0.05 - HS)
+        Red      TR -> A0 (P0.04 - HS)
     Columns
-        Orange   C7  -  not connected
-        White    C6  -  not connected
-        Blue     C5  -  not connected
-        Green    C4 -> A3 (P0.28 - LS)
-        Yellow   C3 -> A2 (P0.30 - LS)
-        Black    C2 -> A1 (P0.05 - HS)
-        Red      C1 -> A0 (P0.04 - HS)
+        Red      C7 -  -  not connected
+        Blck     C6 -  -  not connected
+        Yellow   C5 -> 6  (P0.07 - HS)
+        Green    C4 -> 9  (P0.26 - HS)
+        Blue     C3 -> 10 (P0.27 - HS)
+        White    C2 -> 11 (P0.06 - HS)
+        Orange   C1 -> 12 (P0.08 - HS)
     Other
         ??????  LED -> 13 (P1.09 - HS)
 PMW3610
     Format:   
-        Wire Color | Sensor Node | MCU Node | Pin Code  
+        Wire Color | Skree Node | MCU Node | Pin Code  
     Purple    VIN -> 3.3V
     Brown     GND -> GND
     Blue     SDIO -> MI   (P0.15 - HS)
@@ -77,31 +76,30 @@ PMW3610
         };
     };
 
-    // GPIO configuration for additional pins
+    // GPIO configuration for matrix pins
     gpio_default: gpio_default {
         group1 {
-            // Matrix rows (outputs, high-side)
-            psels = <NRF_PSEL(GPIO_OUT, 0, 7)>,   // R4 - Yellow
-                    <NRF_PSEL(GPIO_OUT, 0, 26)>,  // R3 - Green
-                    <NRF_PSEL(GPIO_OUT, 0, 27)>,  // R2 - Blue
-                    <NRF_PSEL(GPIO_OUT, 0, 6)>,   // R1 - White
-                    <NRF_PSEL(GPIO_OUT, 0, 8)>;   // TR - Orange
+            // Matrix rows (outputs) - TR, R1, R2, R3
+            psels = <NRF_PSEL(GPIO_OUT, 0, 4)>,   // TR - Red -> A0 (P0.04 - HS)
+                    <NRF_PSEL(GPIO_OUT, 0, 5)>,   // R1 - Black -> A1 (P0.05 - HS)
+                    <NRF_PSEL(GPIO_OUT, 0, 30)>,  // R2 - Yellow -> A2 (P0.30 - LS)
+                    <NRF_PSEL(GPIO_OUT, 0, 28)>;  // R3 - Green -> A3 (P0.28 - LS)
         };
         group2 {
-            // Matrix columns (inputs with pull-up)
-            psels = <NRF_PSEL(GPIO_IN, 0, 28)>,   // C4 - Green
-                    <NRF_PSEL(GPIO_IN, 0, 30)>,   // C3 - Yellow
-                    <NRF_PSEL(GPIO_IN, 0, 5)>,    // C2 - Black
-                    <NRF_PSEL(GPIO_IN, 0, 4)>;    // C1 - Red
-            bias-pull-up;
+            // Matrix columns (outputs) - C1, C2, C3, C4, C5
+            psels = <NRF_PSEL(GPIO_OUT, 0, 8)>,   // C1 - Orange -> 12 (P0.08 - HS)
+                    <NRF_PSEL(GPIO_OUT, 0, 6)>,   // C2 - White -> 11 (P0.06 - HS)
+                    <NRF_PSEL(GPIO_OUT, 0, 27)>,  // C3 - Blue -> 10 (P0.27 - HS)
+                    <NRF_PSEL(GPIO_OUT, 0, 26)>,  // C4 - Green -> 9 (P0.26 - HS)
+                    <NRF_PSEL(GPIO_OUT, 0, 7)>;   // C5 - Yellow -> 6 (P0.07 - HS)
         };
         group3 {
             // LED pin
-            psels = <NRF_PSEL(GPIO_OUT, 1, 9)>;   // LED
+            psels = <NRF_PSEL(GPIO_OUT, 1, 9)>;   // LED -> 13 (P1.09 - HS)
         };
         group4 {
             // PMW3610 motion pin
-            psels = <NRF_PSEL(GPIO_IN, 0, 10)>;   // Mot - Red (low-side)
+            psels = <NRF_PSEL(GPIO_IN, 0, 10)>;   // Mot - Red -> D2 (P0.10 - LS)
             bias-pull-up;
         };
     };

@@ -1,0 +1,24 @@
+# Fata Morgana shield default configuration
+
+if SHIELD_FATA_MORGANA_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Fata Morgana"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_FATA_MORGANA_LEFT || SHIELD_FATA_MORGANA_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_POINTING
+    default y
+
+config SPI
+    default y
+
+endif

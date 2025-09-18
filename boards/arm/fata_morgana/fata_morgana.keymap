@@ -14,12 +14,12 @@
         };
         layer1 {
           bindings = <
-          &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &mt LEFT_GUI GRAVE &mt LEFT_ALT F20 &mt LEFT_CONTROL F20 &mt LEFT_SHIFT F20 &mt LC(LEFT_ALT) KP_CLEAR &none &kp GRAVE &kp MINUS &kp EQUAL &kp SINGLE_QUOTE &kp K_UNDO &kp K_CUT &kp K_COPY &kp K_PASTE &kp FIND &none &kp BACKSLASH &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp KP_SLASH &kp PRINTSCREEN &none &none &none &none
+          &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &mt LEFT_GUI GRAVE &mt LEFT_ALT F20 &mt LEFT_CONTROL F20 &mt LEFT_SHIFT F20 &mt LEFT_GUI KP_CLEAR &none &kp GRAVE &kp MINUS &kp EQUAL &kp SINGLE_QUOTE &kp K_UNDO &kp K_CUT &kp K_COPY &kp K_PASTE &kp FIND &none &kp BACKSLASH &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp KP_SLASH &kp PRINTSCREEN &none &none &none &none
           >;
         };
         layer2 {
           bindings = <
-          &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp LEFT_GUI &kp LEFT_ALT &kp LEFT_CONTROL &kp LEFT_SHIFT &mt LC(LEFT_ALT) KP_CLEAR &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp F11 &kp K_UNDO &kp K_CUT &kp K_COPY &kp K_PASTE &kp FIND &kp HOME &kp PAGE_DOWN &kp PAGE_UP &kp END &kp F12 &kp C_VOLUME_DOWN &kp C_VOLUME_UP &kp C_MUTE &none &none
+          &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp LEFT_GUI &kp LEFT_ALT &kp LEFT_CONTROL &kp LEFT_SHIFT &mt LEFT_GUI KP_CLEAR &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp F11 &kp K_UNDO &kp K_CUT &kp K_COPY &kp K_PASTE &kp FIND &kp HOME &kp PAGE_DOWN &kp PAGE_UP &kp END &kp F12 &kp C_VOLUME_DOWN &kp C_VOLUME_UP &kp C_MUTE &none &none
           >;
         };
     };

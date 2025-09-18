@@ -52,11 +52,11 @@ PMW3610
         diode-direction = "col2row";
 
         col-gpios
-            = <&gpio0 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C5 - 6
-            , <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C4 - 9
-            , <&gpio0 27 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C3 - 10
-            , <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C2 - 11
-            , <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C1 - 12
+            = <&gpio0 7 (GPIO_ACTIVE_HIGH)>  // C5 - 6
+            , <&gpio0 26 (GPIO_ACTIVE_HIGH)>  // C4 - 9
+            , <&gpio0 27 (GPIO_ACTIVE_HIGH)>  // C3 - 10
+            , <&gpio0 6 (GPIO_ACTIVE_HIGH)>  // C2 - 11
+            , <&gpio0 8 (GPIO_ACTIVE_HIGH)>  // C1 - 12
             ;
 
     };

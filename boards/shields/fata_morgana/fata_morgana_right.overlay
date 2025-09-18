@@ -49,20 +49,14 @@ PMW3610
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         // label = "KSCAN";
-        diode-direction = "row2col";
-        row-gpios
-            = <&gpio0 5 (GPIO_ACTIVE_HIGH)>   // R1 - Black -> A1 (P0.05 - HS)
-            , <&gpio0 30 (GPIO_ACTIVE_HIGH)>  // R2 - Yellow -> A2 (P0.30 - LS)
-            , <&gpio0 28 (GPIO_ACTIVE_HIGH)>  // R3 - Green -> A3 (P0.28 - LS)
-            , <&gpio0 4 (GPIO_ACTIVE_HIGH)>   // TR - Red -> A0 (P0.04 - HS)
-            ;
+        diode-direction = "col2row";
 
         col-gpios
-            = <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C1 - 12
-            , <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C2 - 11
-            , <&gpio0 27 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C3 - 10
-            , <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C4 - 9
-            , <&gpio0 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C5 - 6
+            = <&gpio0 8 (GPIO_ACTIVE_HIGH)>  // C1 - 12
+            , <&gpio0 6 (GPIO_ACTIVE_HIGH)>  // C2 - 11
+            , <&gpio0 27 (GPIO_ACTIVE_HIGH)>  // C3 - 10
+            , <&gpio0 26 (GPIO_ACTIVE_HIGH)>  // C4 - 9
+            , <&gpio0 7 (GPIO_ACTIVE_HIGH)>  // C5 - 6
             ;
 
     };

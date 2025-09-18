@@ -37,18 +37,18 @@ PMW3610
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,matrix_transform = &default_transform;
+        zmk,matrix_transform = &default_transform0;
         zmk,physical-layout = &default_layout;
     };
 
 
-    &default_transform {
+    default_transform0: default_transform {
         col-offset = <5>;
     };
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
-        label = "KSCAN";
+        // label = "KSCAN";
         diode-direction = "col2row";
 
         col-gpios

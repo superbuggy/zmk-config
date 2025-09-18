@@ -73,32 +73,4 @@ PMW3610
             low-power-enable;
         };
     };
-
-    // GPIO configuration for matrix pins
-    gpio_default: gpio_default {
-        group1 {
-            // Matrix rows (outputs) - TR, R1, R2, R3
-            psels = <NRF_PSEL(GPIO_OUT, 0, 4)>,   // TR - Red -> A0 (P0.04 - HS)
-                    <NRF_PSEL(GPIO_OUT, 0, 5)>,   // R1 - Black -> A1 (P0.05 - HS)
-                    <NRF_PSEL(GPIO_OUT, 0, 30)>,  // R2 - Yellow -> A2 (P0.30 - LS)
-                    <NRF_PSEL(GPIO_OUT, 0, 28)>;  // R3 - Green -> A3 (P0.28 - LS)
-        };
-        group2 {
-            // Matrix columns (outputs) - C1, C2, C3, C4, C5
-            psels = <NRF_PSEL(GPIO_OUT, 0, 8)>,   // C1 - Orange -> 12 (P0.08 - HS)
-                    <NRF_PSEL(GPIO_OUT, 0, 6)>,   // C2 - White -> 11 (P0.06 - HS)
-                    <NRF_PSEL(GPIO_OUT, 0, 27)>,  // C3 - Blue -> 10 (P0.27 - HS)
-                    <NRF_PSEL(GPIO_OUT, 0, 26)>,  // C4 - Green -> 9 (P0.26 - HS)
-                    <NRF_PSEL(GPIO_OUT, 0, 7)>;   // C5 - Yellow -> 6 (P0.07 - HS)
-        };
-        group3 {
-            // LED pin
-            psels = <NRF_PSEL(GPIO_OUT, 1, 9)>;   // LED -> 13 (P1.09 - HS)
-        };
-        group4 {
-            // PMW3610 motion pin
-            psels = <NRF_PSEL(GPIO_IN, 0, 10)>;   // Mot - Red -> D2 (P0.10 - LS)
-            bias-pull-up;
-        };
-    };
 };

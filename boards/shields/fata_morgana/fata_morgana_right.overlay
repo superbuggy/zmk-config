@@ -41,7 +41,10 @@ PMW3610
         zmk,physical-layout = &default_layout;
     };
 
-∂azxc.  ascxzzxc
+
+    &default_transform {
+        col-offset = <5>;
+    };
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";

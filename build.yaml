@@ -1,3 +1,3 @@
 include:
-  - board: fata_morgana_left
-  # - board: fata_morgana_right
+  # - board: fata_morgana_left
+  - board: fata_morgana_right

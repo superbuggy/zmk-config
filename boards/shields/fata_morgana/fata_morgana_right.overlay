@@ -1,5 +1,39 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
+/* 
+Right side layout:
+Skree tail
+    Format:   
+        Wire Color | Skree Node | MCU Node | Pin Code  
+    Rows
+        Orange   R6  -  not connected
+        White    R5  -  not connected
+        Blue     R4  -  not connected
+        Green    R3 -> A3 (P0.28 - LS)
+        Yellow   R2 -> A2 (P0.30 - LS)
+        Black    R1 -> A1 (P0.05 - HS)
+        Red      TR -> A0 (P0.04 - HS)
+    Columns
+        Red      C7 -  -  not connected
+        Blck     C6 -  -  not connected
+        Yellow   C5 -> 6  (P0.07 - HS)
+        Green    C4 -> 9  (P0.26 - HS)
+        Blue     C3 -> 10 (P0.27 - HS)
+        White    C2 -> 11 (P0.06 - HS)
+        Orange   C1 -> 12 (P0.08 - HS)
+    Other
+        ??????  LED -> 13 (P1.09 - HS)
+PMW3610
+    Format:   
+        Wire Color | Skree Node | MCU Node | Pin Code  
+    Purple    VIN -> 3.3V
+    Brown     GND -> GND
+    Blue     SDIO -> MI   (P0.15 - HS)
+    Yellow   SCLK -> SCLK (P0.11 - HS)
+    Orange    NCS -> 5    (P1.08 - HS)
+    Red       Mot -> D2   (P0.10 - LS)
+*/
+
 / {
     chosen {
         zmk,kscan = &kscan0;
@@ -7,37 +41,38 @@
         zmk,physical-layout = &default_layout;
     };
 
-    default_transform: keymap_transform_0 {
-        compatible = "zmk,matrix-transform";
-        columns = <5>;
-        rows = <4>;
-        // Mirror the left side layout for right side
-        map = <
-            RC(0,4) RC(0,3) RC(0,2) RC(0,1) RC(0,0)
-            RC(1,4) RC(1,3) RC(1,2) RC(1,1) RC(1,0)
-            RC(2,4) RC(2,3) RC(2,2) RC(2,1) RC(2,0)
-            RC(3,4) RC(3,3) RC(3,2) RC(3,1) RC(3,0)
-        >;
-    };
+∂azxc.  ascxzzxc
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
-        diode-direction = "row2col";
-
-        row-gpios
-            = <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // TR - A0
-            , <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // R1 - A1
-            , <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // R2 - A2
-            , <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // R3 - A3
-            ;
+        diode-direction = "col2row";
 
         col-gpios
-            = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C1 - 12
-            , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C2 - 11
-            , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C3 - 10
-            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C4 - 9
-            , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C5 - 6
+            = <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C1 - 12
+            , <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C2 - 11
+            , <&gpio0 27 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C3 - 10
+            , <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C4 - 9
+            , <&gpio0 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C5 - 6
             ;
+
+    };
+
+    pmw3610_listener {
+        compatible = "zmk,input-listener";
+        device = <&pmw3610>;
+    };
+};
+
+&pro_micro_spi {
+    status = "okay";
+    cs-gpios = <&pro_micro 10 GPIO_ACTIVE_LOW>;  // Pin 5 (NCS)
+
+    pmw3610: pmw3610@0 {
+        compatible = "pixart,pmw3610";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // Pin D2 (Mot)
+        status = "okay";
     };
 };

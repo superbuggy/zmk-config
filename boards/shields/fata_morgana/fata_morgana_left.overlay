@@ -56,7 +56,7 @@ PMW3610
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
-        diode-direction = "col2row";
+        diode-direction = "row2col";
 
         col-gpios
             = <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C1 - 12

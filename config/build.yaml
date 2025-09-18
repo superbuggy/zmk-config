@@ -3,6 +3,9 @@
 # For more control, add individual board + shield combinations to the `include` property.
 # You can also use `exclude` to remove combinations.
 
+board: []
+shield: []
+
 include:
   # Custom board configurations
   - board: fata_morgana_left

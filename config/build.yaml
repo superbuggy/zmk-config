@@ -6,6 +6,4 @@
 include:
   # Custom board configurations
   - board: fata_morgana_left
-    shield: fata_morgana_left
   - board: fata_morgana_right
-    shield: fata_morgana_right

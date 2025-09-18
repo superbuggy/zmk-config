@@ -40,7 +40,7 @@
         row-gpios
             = <&gpio0 4 (GPIO_ACTIVE_HIGH)>   // TR - Red -> A0 (P0.04 - HS)
             , <&gpio0 5 (GPIO_ACTIVE_HIGH)>   // R1 - Black -> A1 (P0.05 - HS)
-            , <&gpio0 30 (GPIO_ACTIVE_HIG)>  // R2 - Yellow -> A2 (P0.30 - LS)
+            , <&gpio0 30 (GPIO_ACTIVE_HIGH)>  // R2 - Yellow -> A2 (P0.30 - LS)
             , <&gpio0 28 (GPIO_ACTIVE_HIG)>  // R3 - Green -> A3 (P0.28 - LS)
             ;
     };

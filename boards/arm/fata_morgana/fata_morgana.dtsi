@@ -35,14 +35,6 @@
         // GPIO_ACTIVE_HIGH.
         diode-direction = "col2row";
         wakeup-source;
-
-        // Row GPIO pins for the matrix
-        row-gpios
-            = <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // R1 - Black -> A1 (P0.05 - HS)
-            , <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // R2 - Yellow -> A2 (P0.30 - LS)
-            , <&gpio0 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // R3 - Green -> A3 (P0.28 - LS)
-            , <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // TR - Red -> A0 (P0.04 - HS)
-            ;
     };
 
     default_transform: default_transform {

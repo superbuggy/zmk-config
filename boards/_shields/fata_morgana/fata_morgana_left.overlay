@@ -33,11 +33,11 @@
 
 
         col-gpios
-            = <&gpio0  6 (GPIO_ACTIVE_HIGH)>  // O C1 - 11 (P0.6)
-            , <&gpio0 27 (GPIO_ACTIVE_HIGH)>  // W C2 - 10 (P0.27)
+            = <&gpio0  8 (GPIO_ACTIVE_HIGH)>  // O C1 - 5 (P0.8)
+            , <&gpio0  7 (GPIO_ACTIVE_HIGH)>  // W C2 - 6 (P0.7)
+            , <&gpio0 27 (GPIO_ACTIVE_HIGH)>  // G C4 - 10 (P0.27)
             , <&gpio0 26 (GPIO_ACTIVE_HIGH)>  // B C3 - 9 (P0.26)
-            , <&gpio0  7 (GPIO_ACTIVE_HIGH)>  // G C4 - 6 (P0.7)
-            , <&gpio0  8 (GPIO_ACTIVE_HIGH)>  // Y C5 - 5 (P0.8)
+            , <&gpio0  6 (GPIO_ACTIVE_HIGH)>  // Y C5 - 11 (P0.6)
             ;
     };
 };

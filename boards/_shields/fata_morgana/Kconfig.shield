@@ -1,7 +1,0 @@
-# Fata Morgana shield configuration
-
-config SHIELD_FATA_MORGANA_LEFT
-    def_bool $(shields_list_contains,fata_morgana_left)
-
-config SHIELD_FATA_MORGANA_RIGHT
-    def_bool $(shields_list_contains,fata_morgana_right)

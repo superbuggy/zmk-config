@@ -3,7 +3,7 @@
 // instructions.
 
 #include "fata_morgana.dtsi"
-#include "fata_morgana_left-pinctrl.dtsi"
+#include "fata_morgana_right-pinctrl.dtsi"
 // #include <dt-bindings/input/input-event-codes.h>
 
 /* 

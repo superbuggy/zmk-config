@@ -7,12 +7,19 @@
 
 
 &kscan {
-    // Column GPIO pins for the left side matrix
+    row-gpios
+        = <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // R1 - Black -> A1 (P0.05 - HS)
+        , <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // R2 - Yellow -> A2 (P0.30 - LS)
+        , <&gpio0 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // R3 - Green -> A3 (P0.28 - LS)
+        , <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // TR - Red -> A0 (P0.04 - HS)
+        ;
+
+
     col-gpios
-        = <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C0 - Left side column 0
-        , <&gpio0 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C1 - Left side column 1
-        , <&gpio0 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C2 - Left side column 2
-        , <&gpio0 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C3 - Left side column 3
-        , <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // C4 - Left side column 4
+        = <&gpio0  6 (GPIO_ACTIVE_HIGH)>  // O C1 - 11 (P0.6)
+        , <&gpio0 27 (GPIO_ACTIVE_HIGH)>  // W C2 - 10 (P0.27)
+        , <&gpio0 26 (GPIO_ACTIVE_HIGH)>  // B C3 - 9 (P0.26)
+        , <&gpio0  7 (GPIO_ACTIVE_HIGH)>  // G C4 - 6 (P0.7)
+        , <&gpio0  8 (GPIO_ACTIVE_HIGH)>  // Y C5 - 5 (P0.8)
         ;
 };
